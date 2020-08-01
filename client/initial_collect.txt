@@ -1,0 +1,15 @@
+date 
+uname -a
+ifconfig -a
+netstat -anp
+lsof -V
+ps -ef
+netstat -rn
+route
+lsmod
+df
+mount
+w
+last 
+cat /etc/passwd
+cat /etc/shadow
