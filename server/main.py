@@ -23,9 +23,8 @@ def hello_world():
 
 @app.route('/api/data_handler', methods = ['POST'])
 def receive_data():
-    logger.error('xx')
     if request.method == 'POST':
-        data = request.args.get('data')
+        data = request.form.get('data')
         logger.debug(data)
         return jsonify(messsage='Success', statusCode=200)
 
@@ -33,4 +32,4 @@ def receive_data():
 def receive_file():
     if request.method == 'POST':
         data = request.args.get('language')
-        return jsonify(messsage='Success', statusCode=201)
+        return jsonify(messsage='Success', statusCode=200)
