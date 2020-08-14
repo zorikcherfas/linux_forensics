@@ -24,7 +24,9 @@ def hello_world():
 @app.route('/api/data_handler', methods = ['POST'])
 def receive_data():
     if request.method == 'POST':
+        sender = request.form.get('sender')
         data = request.form.get('data')
+        logger.debug(sender)
         logger.debug(data)
         return jsonify(messsage='Success', statusCode=200)
 
