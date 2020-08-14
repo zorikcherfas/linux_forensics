@@ -1,16 +1,10 @@
-from utils.message import Message
-from collectors.date import Date
-from collectors.system_information import SystemInformation
+from client.collectors.collector import Collector, CollectorVolatileData
+import logging
 
-import subprocess
-output = subprocess.check_output(['ifconfig', '-a'])
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
+    logging.info("A Debug Logging Message")
 
-
-collectors = []
-collectors.append(Date())
-collectors.append(SystemInformation())
-
-
-for c in collectors:
-    output = c.collect()
-    Message.send_message(c,output)
+    collector = Collector()
+    collector.register_volatile_data()
+    collector.run_collectors()

@@ -1,7 +1,9 @@
-from collectors.collector_base import CollectorBase
 import subprocess
 
-class Date(CollectorBase):
+from client.collectors.Volatile_Data.collector_base import CollectorBase
+
+
+class DateInfo(CollectorBase):
 
     def collect(self):
         output = subprocess.check_output(['date'])
