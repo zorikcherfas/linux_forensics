@@ -1,5 +1,7 @@
 import logging
-
+import os
+# from client.collectors.Files.file_info import FileInfo
+from client.collectors.Files.history_file import BashHistory
 from client.collectors.Files.log_file import LogFileInfo
 from client.collectors.Volatile_Data.connection_info import ConnectionInfo
 from client.collectors.Volatile_Data.date_info import DateInfo
@@ -41,12 +43,16 @@ class CollectorFilesData:
 
     def register_all(self):
         self._collectors.append(LogFileInfo())
+        # self._collectors.append(FileInfo())
+        self._collectors.append(BashHistory(os.environ['BASH_HISTORY_TEST']))
+
 
     def run_all(self):
         for collector in self._collectors:
             files_output = collector.collect()
             for output in files_output:
-                Message.send_file(collector, output['filename'], output['data'] )
+                Message.send_file(collector, output['filename'], output['data'])
+
 
 class CollectorVolatileData:
 

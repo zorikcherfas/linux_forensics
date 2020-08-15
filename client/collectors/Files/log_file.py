@@ -1,7 +1,7 @@
 from client.collectors.collector_base import CollectorBase
-
 import glob
 import os
+
 
 class LogFileInfo(CollectorBase):
 
@@ -17,7 +17,7 @@ class LogFileInfo(CollectorBase):
                     with open(file) as f:
                         lines = f.readline()
                     data.append({"filename": os.path.basename(file),
-                                 "data": lines})
+                                 "data": ''.join(lines)})
                 except PermissionError:
                     print("PermissionError for file: %s" % file)
         return data
