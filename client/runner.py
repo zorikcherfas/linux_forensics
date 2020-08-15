@@ -1,4 +1,4 @@
-from client.collectors.collector import Collector, CollectorVolatileData
+from client.collectors.collector import Collector
 import logging
 
 if __name__ == '__main__':
@@ -7,4 +7,5 @@ if __name__ == '__main__':
 
     collector = Collector()
     collector.register_volatile_data()
+    collector.register_files_data()
     collector.run_collectors()

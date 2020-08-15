@@ -1,6 +1,6 @@
 import subprocess
 
-from client.collectors.Volatile_Data.collector_base import CollectorBase
+from client.collectors.collector_base import CollectorBase
 
 
 class ConnectionInfo(CollectorBase):
