@@ -28,16 +28,20 @@
 
 
 ## Architecture
-    client:
-    Collectind data.
-    Written in GOLANG
+    Client:
+        Collecting data.
+        Spec:
+            Written in Python
 
     Server:
-    Anyalze data.
-    Writen in python + Flash Or Django
+        Anyalze data.
+
+        Spec:
+            Writen in Python + Flask
+            Database: TBD
 
     Docker:
-    TBD
+        TBD
 
 
 
