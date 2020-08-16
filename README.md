@@ -1,8 +1,5 @@
 # Open source Linux Forensics.
 
-
-
-## Collecting Volaite Data
     
     Indecent resport by live anaylsis.
 
